@@ -9,6 +9,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+from neo4django.db import models as neo_models
+
 
 class Blocks(models.Model):
     startipnum = models.AutoField(db_column='startIpNum', primary_key=True)
@@ -37,3 +39,10 @@ class Location(models.Model):
     class Meta:
         managed = False
         db_table = 'location'
+
+
+class Router(neo_models.NodeModel):
+    ip = neo_models.StringProperty()
+    country = neo_models.StringProperty()
+
+    routers = neo_models.Relationship('self', rel_type='friends_with')
