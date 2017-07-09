@@ -45,8 +45,8 @@ class Location(models.Model):
 
 
 class Router(StructuredNode):
-    ip = StringProperty(unique_index=True)
+    ip = StringProperty()
     country = StringProperty()
     city = StringProperty()
 
-    # router_re = Relationship('Router', 'IS_FROM')
+    router_re = Relationship('Router', 'IS_FROM')

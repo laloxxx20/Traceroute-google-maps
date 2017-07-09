@@ -3,6 +3,7 @@ from subprocess import call
 
 from map.models import Location, Blocks, Router
 from map.utils import transform_ip
+# from py2neo import Relationship, Node
 
 
 COUNTRIES = [
@@ -30,9 +31,9 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
 
         router = Router(ip="192.168.1.1", country="PE", city="Arequipa").save()
-        # router_1 = Router(ip="192.168.1.2", country="PE", city="Cuzco").save()
-        # router_1.router_re.connect(router)
-        # print router_1
+        router_1 = Router(ip="192.168.1.2", country="PE", city="Cuzco").save()
+        router_1.router_re.connect(router)
+        print router_1
         print router
         # for co in COUNTRIES:
         #     locations = Location.objects.filter(country=co)
