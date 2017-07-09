@@ -9,6 +9,9 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+from neomodel import StructuredNode, StringProperty, Relationship
+
+
 # from neo4django.db import models as neo_models
 
 
@@ -41,8 +44,9 @@ class Location(models.Model):
         db_table = 'location'
 
 
-# class Router(neo_models.NodeModel):
-#     ip = neo_models.StringProperty()
-#     country = neo_models.StringProperty()
-#
-#     routers = neo_models.Relationship('self', rel_type='friends_with')
+class Router(StructuredNode):
+    ip = StringProperty(unique_index=True)
+    country = StringProperty()
+    city = StringProperty()
+
+    # router_re = Relationship('Router', 'IS_FROM')

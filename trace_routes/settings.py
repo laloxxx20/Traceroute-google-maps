@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_neomodel',
 
     'map',
 ]
@@ -84,21 +85,10 @@ DATABASES = {
         'PASSWORD': '3n0k11990',                  # Not used with sqlite3.
     }
 }
-# 
-# NEO4J_DATABASES = {
-#     'default': {
-#         'HOST': 'localhost',
-#         'PORT': 7474,
-#         'ENDPOINT': '/db/data/',
-#         'OPTIONS': {
-#             'username': 'neo4j',
-#             'password': 'zxcvbnm',
-#         }
-#     }
-# }
-#
-#
-# DATABASE_ROUTERS = ['neo4django.utils.Neo4djangoIntegrationRouter']
+
+
+NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL', 'bolt://neo4j:3n0k11990@localhost:7687')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
