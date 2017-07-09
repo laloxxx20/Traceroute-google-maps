@@ -81,24 +81,24 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'geoip',
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'zxcvbnm',                  # Not used with sqlite3.
+        'PASSWORD': '3n0k11990',                  # Not used with sqlite3.
     }
 }
-
-NEO4J_DATABASES = {
-    'default': {
-        'HOST': 'localhost',
-        'PORT': 7474,
-        'ENDPOINT': '/db/data/',
-        'OPTIONS': {
-            'username': 'neo4j',
-            'password': 'zxcvbnm',
-        }
-    }
-}
-
-
-DATABASE_ROUTERS = ['neo4django.utils.Neo4djangoIntegrationRouter']
+# 
+# NEO4J_DATABASES = {
+#     'default': {
+#         'HOST': 'localhost',
+#         'PORT': 7474,
+#         'ENDPOINT': '/db/data/',
+#         'OPTIONS': {
+#             'username': 'neo4j',
+#             'password': 'zxcvbnm',
+#         }
+#     }
+# }
+#
+#
+# DATABASE_ROUTERS = ['neo4django.utils.Neo4djangoIntegrationRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
