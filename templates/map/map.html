@@ -13,17 +13,33 @@
     <h3>Sudamerica Tracerouting</h3>
     <div id="map"></div>
   </body>
+  
   <script>
+      var routers = [
+      {% for router in routers %}
+        { lat: {{ router.ref_node_1.lat }}, lng: {{ router.ref_node_1.lng }} },
+      {% endfor %}
+      ];
+      console.log("routers: ", routers);
       function initMap() {
         var uluru = {lat: -25.363, lng: 131.044};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru
         });
-        var marker = new google.maps.Marker({
+        /*var marker = new google.maps.Marker({
           position: uluru,
           map: map
+        });*/
+        var routersPath = new google.maps.Polyline({
+          path: routers,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
         });
+
+        routersPath.setMap(map);
       }
     </script>
     <script async defer

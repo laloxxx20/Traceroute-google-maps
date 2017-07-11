@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'geoip',
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': '3n0k11990',                  # Not used with sqlite3.
+        'PASSWORD': 'zxcvbnm',                  # Not used with sqlite3.
     }
 }
 
