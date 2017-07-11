@@ -44,9 +44,18 @@ class Location(models.Model):
         db_table = 'location'
 
 
-class Router(StructuredNode):
-    ip = StringProperty()
-    country = StringProperty()
-    city = StringProperty()
+class Router(models.Model):
+    # ip = StringProperty()
+    # country = StringProperty()
+    # city = StringProperty()
+    #
+    # router_re = Relationship('Router', 'IS_FROM')
 
-    router_re = Relationship('Router', 'IS_FROM')
+    ip = models.CharField(max_length=50, blank=True, null=True)
+    lat = models.CharField(max_length=50, blank=True, null=True)
+    lng = models.CharField(max_length=50, blank=True, null=True)
+
+
+class Edge(models.Model):
+    ref_node_1 = models.ForeignKey(Router, related_name="ref_node_1", null=True, default=None)
+    ref_node_2 = models.ForeignKey(Router, related_name="ref_node_2", null=True, default=None)

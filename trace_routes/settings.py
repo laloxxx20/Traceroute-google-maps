@@ -82,12 +82,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'geoip',
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'zxcvbnm',                  # Not used with sqlite3.
+        'PASSWORD': '3n0k11990',                  # Not used with sqlite3.
     }
 }
 
 
-NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL', 'bolt://neo4j:zxcvbnm@localhost:7687')
+NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL', 'bolt://neo4j:3n0k11990@localhost:7687')
 
 
 # Password validation

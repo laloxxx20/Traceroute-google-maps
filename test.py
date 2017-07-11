@@ -11,9 +11,9 @@ print("address: ", address)
 address = "190.81.133.237"
 
 reader = geoip2.database.Reader('GeoLite2-City.mmdb')
-print "reader: ", reader.country.is_code('VE')
+# print "reader: ", reader.country.is_code('VE')
 # for co in reader.continent:
 #     print "reader: ", co
-# response = reader.city(address)
+response = reader.city(address)
 # print "response:", response.country.name
 # print "response:", response.city.name
